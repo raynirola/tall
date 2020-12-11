@@ -3,9 +3,13 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
-    darkMode: false, // or 'media' or 'class'
+    darkMode: 'media', // or 'media' or 'class'
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                'poppins': ['Poppins', 'sans-serif'],
+            },
+        },
     },
     variants: {
         extend: {
