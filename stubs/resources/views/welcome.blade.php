@@ -1,19 +1,20 @@
 <x-base-layout>
     <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
         @if (Route::has('login'))
-            <div class="hidden fixed top-0 right-0 px-6 py-6 sm:block">
-                @auth
-                    <a href="{{ url('/home') }}" class="flex items-center justify-center px-4 py-1.5 ring-1 ring-gray-400 hover:ring-gray-200 focus:ring-gray-200 dark:focus:ring-gray-200 dark:hover:ring-gray-200 rounded-md text-sm text-gray-700 dark:text-gray-400 hover:text-gray-200 dark:hover:text-gray-200">Home</a>
-                @else
-                    <div class="flex items-center justify-center">
-                        <a href="{{ route('login') }}" class="flex items-center justify-center px-4 py-1.5 ring-1 ring-gray-400 hover:ring-gray-200 focus:ring-gray-200 dark:focus:ring-gray-200 dark:hover:ring-gray-200 rounded-md text-sm text-gray-700 dark:text-gray-400 hover:text-gray-200 dark:hover:text-gray-200">Login</a>
+            <div class="hidden fixed top-0 inset-y-0 py-6 sm:block w-full h-40">
+                <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 flex items-center justify-end">
+                    @auth
+                        <a href="{{ url('/home') }}" class="flex items-center justify-center px-4 py-1.5 ring-1 ring-gray-400 hover:ring-gray-700 dark:hover:ring-gray-200 focus:outline-none focus:ring-gray-800 dark:focus:ring-gray-200 dark:hover:ring-gray-200 rounded-md text-sm text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition ease-in-out duration-150">Home</a>
+                    @else
+                        <div class="flex items-center justify-center">
+                            <a href="{{ route('login') }}" class="flex items-center justify-center px-4 py-1.5 ring-1 ring-gray-400 hover:ring-gray-700 dark:hover:ring-gray-200 focus:outline-none focus:ring-gray-800 dark:focus:ring-gray-200 dark:hover:ring-gray-200 rounded-md text-sm text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition ease-in-out duration-150">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 flex items-center justify-center px-4 py-1.5 ring-1 ring-gray-400 hover:ring-gray-200 focus:ring-gray-200 dark:focus:ring-gray-200 dark:hover:ring-gray-200 rounded-md text-sm text-gray-700 dark:text-gray-400 hover:text-gray-200 dark:hover:text-gray-200">Register</a>
-                        @endif
-                    </div>
-
-                @endauth
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="ml-4 flex items-center justify-center px-4 py-1.5 ring-1 ring-gray-400 hover:ring-gray-700 dark:hover:ring-gray-200 focus:outline-none focus:ring-gray-800 dark:focus:ring-gray-200 dark:hover:ring-gray-200 rounded-md text-sm text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition ease-in-out duration-150">Register</a>
+                            @endif
+                        </div>
+                    @endauth
+                </div>
             </div>
         @endif
 
